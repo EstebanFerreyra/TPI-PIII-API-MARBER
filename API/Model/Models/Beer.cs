@@ -13,9 +13,9 @@ namespace Models.Models
         }
 
         public int Id { get; set; }
-        public string BeerName { get; set; }
-        public string BeerStyle { get; set; }
-        public decimal Price { get; set; }
+        public string BeerName { get; set; } = null!;
+        public string BeerStyle { get; set; } = null!;
+        public decimal Price { get; set; } = 0!;
 
         public virtual ICollection<Orders> Orders { get; set; }
     }

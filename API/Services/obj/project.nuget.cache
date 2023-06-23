@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ZHKRPhK8Zs1VHitnekywvtB4z7KDMkVViZ5aXMeabi7D7ce7z9SgPCJlCdICrDTudPnrVRj2ILvXAgBwgARfjA==",
+  "dgSpecHash": "CjBjQbAcQDl+jVxopauqdKYuecupPjcSm6y5AqRrxhZKuJIGbzpGhVrpvE1v3jZMCZ33k4ekBRMTFhGHMGwbmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Services\\Services.csproj",
+  "projectFilePath": "C:\\Users\\tebig\\OneDrive\\Escritorio\\TPI-PIII-API-MARBER\\API\\Services\\Services.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\tebig\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\tebig\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\tebig\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\tebig\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\tebig\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\tebig\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",

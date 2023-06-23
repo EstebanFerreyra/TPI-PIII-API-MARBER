@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Models.DTO;
 using Models.Models;
+using Models.ViewModel;
+using Services.IServices;
 using Services.Services;
 
 namespace Interface.Controllers
@@ -8,49 +11,121 @@ namespace Interface.Controllers
     [Route("Marber/BeerController")]
     public class BeerController : Controller
     {
+        private readonly IBeerService _beerService;
+        private readonly ILogger<BeerController> _logger;
 
-        private readonly BeerService _beerService;
-        public BeerController(BeerService beerService)
+        public BeerController(IBeerService beerService, ILogger<BeerController> logger)
         {
             _beerService = beerService;
+            _logger = logger;
         }
 
         [HttpGet("GetBeers")]
-        public ActionResult<List<Beer>> GetBeers()
+        public ActionResult<List<BeerDTO>> GetBeers()
         {
-            var response = _beerService.GetListBeer();
-            return Ok(response);
+            try
+            {
+                if (_beerService.GetListBeer() != null)
+                {
+                    return Ok(_beerService.GetListBeer());
+                }
+                else
+                {
+                    throw new Exception();
+                }                
+            }
+            catch (Exception exe)
+            {
+                _logger.LogError($"Ocurrio un error en el controlador GetBeers: {exe.Message}");
+                return BadRequest($"Error al buscar la lista de todas las cervezas. Error: {exe.Message}");
+            }
         }
 
-        // AGREAGAR GetBeerById
+        [HttpGet("GetBeerById")]
+        public ActionResult<BeerDTO> GetBeerById(int id) 
+        {
+            try
+            {
+                if (_beerService.GetBeerById(id) != null)
+                {
+                    return Ok(_beerService.GetBeerById(id));
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception exe)
+            {
+                _logger.LogError($"Ocurrio un error en el controlador GetBeerById: {exe.Message}");
+                return BadRequest($"Error al buscar una cerveza por su id. Error: {exe.Message}");
+            }
+        }
 
-        //[HttpPost("AddBeer")]
-        //public ActionResult AddBeer([FromBody] Beer beer)
-        //{
+        [HttpPut("ModifyPriceBeerById/{id}")]
+        public ActionResult<string> ModifyPriceBeerById(int id, [FromBody] decimal newPrice)
+        {
+            try
+            {
+                if (_beerService.ModifyPriceBeerById(id, newPrice) == true)
+                {
+                    return Ok("Cerveza modificada con exito");
+                }
+                else 
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception exe)
+            {
+                _logger.LogError($"Ocurrio un error en el controlador ModifyPriceBeerById: {exe.Message}");
+                return BadRequest($"Error al modificar una cerveza. Error: {exe.Message}");
+            }
+        }
 
-        //    // agregar que devuelva url por header y objeto agregado por body
+        [HttpPost("AddBeer")]
+        public ActionResult<string> AddBeer([FromBody] AddBeerViewModel addBeerViewModel)
+        {
+            try
+            {
+                if (_beerService.AddBeer(addBeerViewModel) != null)
+                {
+                    string baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
+                    string apiAndEndpointUrl = $"Marber/BeerController/GetBeerById";
+                    string locationUrl = $"{baseUrl}/{apiAndEndpointUrl}?id={_beerService.AddBeer(addBeerViewModel).Id}";
+                    return Created(locationUrl, _beerService.AddBeer(addBeerViewModel));
+                } 
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception exe)
+            {
+                _logger.LogError($"Ocurrio un error en el controlador AddBeer: {exe.Message}");
+                return BadRequest($"Error al agregar una cerveza. Error: {exe.Message}");
+            }
+        }
 
-
-        //    var response = _beerService.AddBeer(beer);
-        //    return Ok(response);
-        //}
-
-
-        //[HttpPut("ModifyBeerById/{id}")]
-        //public ActionResult<List<Beer>> ModifyBeer(int id, [FromBody] decimal price)
-        //{
-        //    var response = _beerService.ModifyBeer(id, price);
-        //    return Ok(response);
-        //}
-
-
-
-        //[HttpDelete("deletebeerbyid/{id}")]
-        //public ActionResult<List<Beer>> deletebeerbyid(int id)
-        //{
-        //    var response = _beerService.DeleteBeerById(id);
-        //    return Ok(response);
-        //}
-
+        [HttpDelete("DeleteBeerById/{id}")]
+        public ActionResult<string> DeleteBeerById(int id)
+        {
+            try
+            {
+                if (_beerService.DeleteBeerById(id) == true)
+                {
+                    return Ok("Recurso eliminado con exito");
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception exe)
+            {
+                _logger.LogError($"Ocurrio un error en el controlador DeleteBeerById: {exe.Message}");
+                return BadRequest($"Ocurrio un error al intentar eliminar una cerveza. Error: {exe.Message}");
+            }        
+        }
     }
 }

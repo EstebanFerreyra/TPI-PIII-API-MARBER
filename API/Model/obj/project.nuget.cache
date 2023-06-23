@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bMti72mDuDQJyWuyUV/W1H/XmlrTKAC/VB9XC5YroMf7RUVU+Sw1wMTrk3OpYA4FmZ4xcyoFdSGt3an8UY4p1g==",
+  "dgSpecHash": "DOUqDpePzIsLhrvEwbmecR8rEZfa8kfbnKwjiVBIRB4F82+GKmGzw7ovw6ajsefIC1h7wGF58tbCO32aTwWHGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Model\\Models.csproj",
+  "projectFilePath": "C:\\Users\\tebig\\OneDrive\\Escritorio\\TPI-PIII-API-MARBER\\API\\Model\\Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tebig\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\tebig\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Model\\Models.csproj": {}
+    "C:\\Users\\tebig\\OneDrive\\Escritorio\\TPI-PIII-API-MARBER\\API\\Model\\Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Model\\Models.csproj": {
+    "C:\\Users\\tebig\\OneDrive\\Escritorio\\TPI-PIII-API-MARBER\\API\\Model\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Model\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\tebig\\OneDrive\\Escritorio\\TPI-PIII-API-MARBER\\API\\Model\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Model\\Models.csproj",
+        "projectPath": "C:\\Users\\tebig\\OneDrive\\Escritorio\\TPI-PIII-API-MARBER\\API\\Model\\Models.csproj",
         "packagesPath": "C:\\Users\\tebig\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Model\\obj\\",
+        "outputPath": "C:\\Users\\tebig\\OneDrive\\Escritorio\\TPI-PIII-API-MARBER\\API\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tebig\\AppData\\Roaming\\NuGet\\NuGet.Config",
