@@ -1,4 +1,8 @@
-﻿using Models.Models;
+﻿using AutoMapper;
+using Models.DTO;
+using Models.Models;
+using Services.IServices;
+using Services.Mappings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,19 +11,20 @@ using System.Threading.Tasks;
 
 namespace Services.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private readonly Marber_BBDDContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public UserService(Marber_BBDDContext context)
+        public UserService(Marber_BBDDContext _context)
         {
-            _dbContext = context;
+            _dbContext = _context;
+            _mapper = AutoMapperConfig.Configure();
         }
 
-        public List<Users> GetListUser()
+        public List<UserDTO> GetUsers()
         {
-            var list = _dbContext.Users.ToList();
-            return list;
+            return _mapper.Map<List<UserDTO>>(_dbContext.Users.ToList());
         }
 
     }

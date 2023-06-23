@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Model\\Models.csproj": {}
+    "C:\\Users\\ferc\\Desktop\\NERINA\\TPI-PIII-API-MARBER\\API\\Model\\Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Model\\Models.csproj": {
+    "C:\\Users\\ferc\\Desktop\\NERINA\\TPI-PIII-API-MARBER\\API\\Model\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Model\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\ferc\\Desktop\\NERINA\\TPI-PIII-API-MARBER\\API\\Model\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Model\\Models.csproj",
-        "packagesPath": "C:\\Users\\tebig\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tebig\\OneDrive\\Escritorio\\API\\Model\\obj\\",
+        "projectPath": "C:\\Users\\ferc\\Desktop\\NERINA\\TPI-PIII-API-MARBER\\API\\Model\\Models.csproj",
+        "packagesPath": "C:\\Users\\ferc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ferc\\Desktop\\NERINA\\TPI-PIII-API-MARBER\\API\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tebig\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ferc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
