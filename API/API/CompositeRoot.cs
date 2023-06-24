@@ -8,6 +8,7 @@ namespace Interface
         public static void DependencyInjection(WebApplicationBuilder builder)
         {
             builder.Services.AddScoped<IBeerService, BeerService>();
+            builder.Services.AddScoped<ICustomAuthenticationService, AuthenticationService>();
             builder.Services.AddScoped<UserService>();
         }
     }

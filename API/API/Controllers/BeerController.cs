@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Models.DTO;
 using Models.Models;
@@ -20,6 +21,7 @@ namespace Interface.Controllers
             _logger = logger;
         }
 
+        [Authorize]
         [HttpGet("GetBeers")]
         public ActionResult<List<BeerDTO>> GetBeers()
         {
@@ -62,6 +64,7 @@ namespace Interface.Controllers
             }
         }
 
+        [Authorize]
         [HttpPut("ModifyPriceBeerById/{id}")]
         public ActionResult<string> ModifyPriceBeerById(int id, [FromBody] decimal newPrice)
         {
@@ -83,6 +86,7 @@ namespace Interface.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("AddBeer")]
         public ActionResult<string> AddBeer([FromBody] AddBeerViewModel addBeerViewModel)
         {
@@ -107,6 +111,7 @@ namespace Interface.Controllers
             }
         }
 
+        [Authorize]
         [HttpDelete("DeleteBeerById/{id}")]
         public ActionResult<string> DeleteBeerById(int id)
         {
